@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding: 1em;
+    background-color: var(--very-light-gray);
+    min-height: 100vh;
+}
+
+main {
+    max-width: 325px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 3rem;
+    padding-bottom: 2.5rem;
+}
+
+header {
+    align-self: center;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 200;
+}
+
+.h1-bold {
+    font-weight: 600;
+}
+
+header>p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--grayish-blue);
+}
+
+section {
+    padding: 1rem;
+    line-height: 2;
+    border-radius: 5px;
+    box-shadow: 8px 10px 36px -6px #A3A5AE; 
+}
+
+section>h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+
+}
+
+section>p {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--grayish-blue);
+}
+
+section>svg {
+    float: right;
+}
+
+.supervision {
+    border-top: solid thick var(--cyan);
+}
+
+.teambuilder{
+    border-top: solid thick var(--red);
+}
+
+.karma{
+    border-top: solid thick var(--orange);
+}
+
+.calculator{
+    border-top: solid thick var(--blue);
+}
+
+footer{
+    justify-content: center;
+    font-size: .5rem;
+    display: flex;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer>p>span{
+    color: gray;
+}
+
+@media screen and (min-width: 1080px) {
+    main{
+        max-width: 1250px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+        grid-template-areas: 
+        ". header ."
+        "supervision team calculator"
+        ". karma ."
+        ;
+    }
+
+    header{
+        grid-area: header;
+    }
+
+    .supervision{
+        grid-area: supervision;
+        transform: translateY(50%);
+    }
+
+    .teambuilder{
+        grid-area: team;
+    }
+
+    .karma{
+        grid-area: karma;
+    }
+
+    .calculator{
+        grid-area: calculator;
+        transform: translateY(50%);
+    }
+    
+}
